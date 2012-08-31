@@ -1,14 +1,17 @@
-# Django SSL Redirect#
+Django SSL Redirect
+===================
 
 Django SSL Redirect is a middleware that ensures secured URLs and only secured URLs are accessed securely over HTTPS.
 
-##Installation##
-To install:
+Installation
+------------
 
-`$ pip install hg+https://bitbucket.org/nextscreenlabs/django-ssl-redirect`
+Run `pip install hg+https://bitbucket.org/nextscreenlabs/django-ssl-redirect`
 
-## Securing Views ##
-To secure a view simply add 'SSL': True the views kwargs
+Securing Views
+--------------
+
+To secure a view simply add `'SSL': True` the views kwargs
 
 ```python
 urlpatterns = patterns('my_app.views',
@@ -16,16 +19,17 @@ urlpatterns = patterns('my_app.views',
 )
 ```
 
-##Settings##
+Settings
+--------
 Use secure redirects.
 
 `USE_SSL (default True)`
 
 Name of the view kwarg.
 
-`SLL (default 'SSL')`
+`SSL (default 'SSL')`
 
-Port number of the SLL connection. If not None it is appended after the host.
+Port number of the SSL connection. If not None it is appended after the host.
 
 `SSLPORT (default None)`
 
