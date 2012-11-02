@@ -6,7 +6,7 @@ Django SSL Redirect is a middleware that ensures secured URLs and only secured U
 Installation
 ------------
 
-Run `pip install hg+https://bitbucket.org/nextscreenlabs/django-ssl-redirect`
+Run `pip install django-ssl-redirect`
 
 Securing Views
 --------------

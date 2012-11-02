@@ -23,7 +23,7 @@ def get_readme():
     return ''
 
 setup(
-    name = 'Django SSL Redirect',
+    name = 'django-ssl-redirect',
     version = __import__('ssl_redirect').get_version().replace(' ', '-'),
     url = 'https://bitbucket.org/nextscreenlabs/django-ssl-redirect',
     author = 'Jason Christa',
@@ -35,7 +35,7 @@ setup(
     install_requires = read_file('requirements.txt'),
     classifiers = [
         'Environment :: Web Environment',
-        'License :: OSI Approved :: BSD Liscense',
+        'License :: OSI Approved :: BSD License',
         'Framework :: Django',
         'Programming Language :: Python',
     ],
