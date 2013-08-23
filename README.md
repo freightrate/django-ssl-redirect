@@ -8,9 +8,17 @@ Installation
 
 Run `pip install django-ssl-redirect`
 
+Add `ssl_redirect.middleware.SSLRedirectMiddleware` to the top of your MIDDLEWARE_CLASSES setting:
+
+```python
+MIDDLEWARE_CLASSES = (
+    'ssl_redirect.middleware.SSLRedirectMiddleware',
+	...
+)
+```
+
 Securing Views
 --------------
-
 To secure a view simply add `'SSL': True` the views kwargs
 
 ```python
@@ -19,20 +27,24 @@ urlpatterns = patterns('my_app.views',
 )
 ```
 
+You can always ensure a view is not served over SSL with `'SSL': True`
+
+```python
+urlpatterns = patterns('my_app.views',
+    url(r'^unsecure/path/$', 'secure_view', {'SSL': False}),
+)
+```
+
 Settings
 --------
-Use secure redirects.
+`SSL_ON (default True)`
+Use SSL redirects. This setting overrides all other settings.
 
-`USE_SSL (default True)`
-
-Name of the view kwarg.
-
-`SSL (default 'SSL')`
-
-Port number of the SSL connection. If not None it is appended after the host.
-
-`SSLPORT (default None)`
-
-A list of secure paths.
+`SSL_ALWAYS (default False)`
+Use SSL throughout the entire site.
 
 `HTTPS_PATHS (default [])`
+A list of secure paths.
+
+`SSL_PORT (default None)`
+Port number of the SSL connection. If the value is not None it will be appended after the host.
