@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.http import HttpResponseRedirect
+from django.http import HttpResponsePermanentRedirect
 
 
 SSL_ON = getattr(settings, 'SSL_ON', True)
@@ -64,4 +64,4 @@ class SSLRedirectMiddleware:
         	host=host,
         	path=request.get_full_path()
         )
-        return HttpResponseRedirect(url)
+        return HttpResponsePermanentRedirect(url)
