@@ -44,11 +44,6 @@ STATICFILES_FINDERS = (
 
 SECRET_KEY = 'dkr+86m#8)$5b*y(c3n)jp5-kwr&amp;y+4a@tvi@rt2^h0e3%mnp^'
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-
 MIDDLEWARE_CLASSES = (
     'ssl_redirect.middleware.SSLRedirectMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,9 +57,21 @@ ROOT_URLCONF = 'testsite.urls'
 
 WSGI_APPLICATION = 'testsite.wsgi.application'
 
-TEMPLATE_DIRS = (
-    os.path.join(DIRNAME, 'templates/'),
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(DIRNAME, 'templates/')],
+        'APP_DIRS': False,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 INSTALLED_APPS = (
     'django.contrib.auth',
