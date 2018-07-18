@@ -3,7 +3,7 @@ Django SSL Redirect
 
 [![CircleCI](https://circleci.com/gh/freightrate/django-ssl-redirect.svg?style=svg)](https://circleci.com/gh/freightrate/django-ssl-redirect)
 
-Django SSL Redirect is a middleware that ensures secured URLs and only secured URLs are accessed securely over HTTPS.
+Django SSL Redirect is a middleware that ensures secured URLs and only secured URLs are accessed securely over HTTPS. Now supports new middleware style.
 
 Installation
 ------------
