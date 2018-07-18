@@ -44,14 +44,14 @@ STATICFILES_FINDERS = (
 
 SECRET_KEY = 'dkr+86m#8)$5b*y(c3n)jp5-kwr&amp;y+4a@tvi@rt2^h0e3%mnp^'
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
     'ssl_redirect.middleware.SSLRedirectMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-)
+]
 
 ROOT_URLCONF = 'testsite.urls'
 
