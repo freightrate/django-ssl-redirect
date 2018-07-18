@@ -12,7 +12,10 @@ SSL_KW = 'SSL'
 class SSLRedirectMiddleware(object):
     def __init__(self, get_response):
         self.get_response = get_response
- 
+        
+    def __call__(self, request):
+        return self.get_response(request)
+
     def process_view(self, request, view_func, view_args, view_kwargs):
         response_is_secure = self._response_is_secure(request, view_func, view_args, view_kwargs)
         if response_is_secure != self._request_is_secure(request):
