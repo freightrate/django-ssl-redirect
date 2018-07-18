@@ -10,7 +10,7 @@ class SecureDefaultTestCase(TestCase):
     def test_secure_url(self):
         url = reverse('secure_page')
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 301)
 
     def test_unsecure_url(self):
         url = reverse('unsecure_page')
